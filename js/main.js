@@ -27,8 +27,8 @@ $( "#new-video" ).submit(function(e) {
   console.log(theId);
   function add(e) {
   	var addVideo = {};
-  	// $('#new-video input[type="text"]')
-   //      .each(function(){addVideo[this.theTitle] = this.theId;});
+  	$('#new-video input[type="text"]')
+        .each(function(){addVideo[this.theTitle] = this.theId;});
     videos.push(addVideo);
   }
 	add();
