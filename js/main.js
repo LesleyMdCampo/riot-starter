@@ -18,19 +18,19 @@ var renderVideoList = function () {
 
 renderVideoList();
 
-
-
-// var items = [
-//   { name: 'Mayer', price: 1 },
-//   { name: 'Natalie', price: 2 },
-//   { name: 'Lesley', price: 3 }
-// ];
-
-// for (var i=0; i < items.length; i++) {
-// 	var bob = items[i]['name'];
-// 	var smith = items[i]['price'];
-// 	// console.log(name + ": $" + price);
-// 	var pleaseWork = $.render(itemTemplate,  { name: bob, price: smith} );
-// 	$('#store').append(pleaseWork);
-// }
-
+$( "#new-video" ).submit(function(e) {
+  event.preventDefault();
+  alert( "Your video has been added." );
+  var theTitle = $('#new-title').val();
+  var theID = $('#new-id').val();
+  console.log(theTitle);
+  console.log(theID);
+  var addSubmittedToArray = function(e) {
+  	$('#new-video input[type="text"]')
+        .each(function(){videos[this.name] = this.value;});
+    videos.push(videos);
+  }
+	// 	videos.push({'title': theTitle, 'youtubeId': theID});
+	// }
+	addSubmittedToArray();
+});
