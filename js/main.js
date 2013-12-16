@@ -1,5 +1,5 @@
 
-var itemTemplate = $('#templates .item').html();
+var itemTemplate = $('#templates .video-list-item').html();
 
 var videos = [
   { title: 'Get Krazy', youtubeId: 'GyR2HJ9B7aM' },
@@ -9,8 +9,9 @@ var videos = [
 var renderVideoList = function () {
   for (var i = 0; i < videos.length; i += 1) {
 		var title = videos[i]['title'];
-		console.log(title);
-		var list = $.render(itemTemplate, { title: title } );
+		var youtubeId = "https://www.youtube.com/watch?v=" + videos[i]['youtubeId'];
+		console.log(title, youtubeId);
+		var list = $.render(itemTemplate, { title: title, youtubeId: youtubeId  } );
 		$('#video-list').append(list);
 	}
 };
