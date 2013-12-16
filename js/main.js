@@ -25,11 +25,12 @@ $( "#new-video" ).submit(function(e) {
   var theId = $('#new-id').val();
   console.log(theTitle);
   console.log(theId);
-  function add(e) {
-  	var addVideo = {};
-  	$('#new-video input[type="text"]')
-        .each(function(){addVideo[this.theTitle] = this.theId;});
-    videos.push(addVideo);
-  }
-	add();
+
+  videos.push({
+    title: theTitle,
+    youtubeId: theId
+  });
+  $("#video-list").empty();
+  renderVideoList();
 });
+
