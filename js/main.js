@@ -20,17 +20,16 @@ renderVideoList();
 
 $( "#new-video" ).submit(function(e) {
   event.preventDefault();
-  alert( "Your video has been added." );
+  // alert( "Your video has been added." );
   var theTitle = $('#new-title').val();
-  var theID = $('#new-id').val();
+  var theId = $('#new-id').val();
   console.log(theTitle);
-  console.log(theID);
-  var addSubmittedToArray = function(e) {
-  	$('#new-video input[type="text"]')
-        .each(function(){videos[this.name] = this.value;});
-    videos.push(videos);
+  console.log(theId);
+  function add(e) {
+  	var addVideo = {};
+  	// $('#new-video input[type="text"]')
+   //      .each(function(){addVideo[this.theTitle] = this.theId;});
+    videos.push(addVideo);
   }
-	// 	videos.push({'title': theTitle, 'youtubeId': theID});
-	// }
-	addSubmittedToArray();
+	add();
 });
