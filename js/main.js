@@ -10,9 +10,9 @@ var renderVideoList = function () {
   for (var i = 0; i < videos.length; i += 1) {
 		var title = videos[i]['title'];
 		console.log(title);
-	}
-	var list = $.render(itemTemplate, { title: title } );
+		var list = $.render(itemTemplate, { title: title } );
 		$('#video-list').append(list);
+	}
 };
 
 renderVideoList();
