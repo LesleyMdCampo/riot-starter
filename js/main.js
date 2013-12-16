@@ -23,9 +23,9 @@ $( "#new-video" ).submit(function(e) {
   // alert( "Your video has been added." );
   var theTitle = $('#new-title').val();
   var theId = $('#new-id').val();
-  console.log(theTitle);
-  console.log(theId);
-
+  // console.log(theTitle);
+  // console.log(theId);
+  var theNewVideo = 
   videos.push({
     title: theTitle,
     youtubeId: theId
@@ -33,4 +33,3 @@ $( "#new-video" ).submit(function(e) {
   $("#video-list").empty();
   renderVideoList();
 });
-
