@@ -9,6 +9,7 @@
   puppies.on("create vote-cast", function () {
     // TODO EXTENSION
     // Iterate through each puppy object and display number of votes
+    
   });
 
 })();

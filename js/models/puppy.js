@@ -40,8 +40,13 @@
 
     this.getSortedArray = function () {
       // TODO EXTENSION
-    };
+      var newOrder = puppies.slice(0);
 
+      function compare(a, b) {
+        return b.votes - a.votes;
+      };
+      return newOrder.sort(compare);
+    };  
   };
 
   window.puppies = new Puppy();
