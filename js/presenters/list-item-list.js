@@ -24,7 +24,7 @@
     listItems.destroy(index);
   });
 
-  /*/ DELETE THIS LINE FOR THE EXTENSION
+ 
   // When the user clicks the edit button, toggle the 'edit' css
   // class; the css does all the heavy lifting
   $root.on('click', ".list-item .edit", function () {
@@ -50,11 +50,13 @@
     $('.list-item', $root).eq(itemIndex).remove();
   });
 
-  /*/ DELETE THIS LINE FOR THE EXTENSION
+ 
   // When we hear the 'update' event, that means a list item's data
   // has just updated. We need to update the page to reflect that,
   // as well as remove the 'edit' class so the edit form disappears
-  listItems.on(...);
+  listItems.on('update', function (index, name, priority) {
+    var updateListItemHtml = $.render(itemTemplate, item);
+  });
   /**/
 
 })();

@@ -7,18 +7,21 @@
     // Add the .on and .trigger methods to the new object being created
     $.observable(this);
 
-    this.create = function (index, name) {
+    this.create = function (listItem) {
       // TODO
-      items.push(ListItem);
-      this.trigger('create', items[index], index);
+      items.push(listItem);
+      this.trigger('create', listItem);
     };
 
     this.destroy = function (index) {
       // TODO
+      items.splice(index, 1);
+      this.trigger('destroy', index);
     };
 
     this.update = function (index, name, priority) {
       // TODO EXTENSION
+      name.push(listItem);
       this.trigger('update', items[index], index);
     };
 
