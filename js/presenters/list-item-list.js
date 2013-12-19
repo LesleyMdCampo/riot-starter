@@ -19,7 +19,7 @@
 
     // Get the index of the target list item
     var index = $(this).closest('.list-item').index();
-    console.log('closest', $(this).closest('.list-item'));
+    // console.log('closest', $(this).closest('.list-item'));
     // Destroy it via the model
     listItems.destroy(index);
   });
@@ -29,6 +29,14 @@
   // class; the css does all the heavy lifting
   $root.on('click', ".list-item .edit", function () {
     $(this).closest('.list-item').toggleClass('edit');
+  });
+
+  $root.on('click', '.save-edit', function (){
+    var $item = $(this).closest('.list-item');
+    var newName = $('.edit-name', $item).val();
+    var newCat = $('.edit-category', $item).val();
+    var index = $item.index();
+    listItems.update(index, newName, newCat);
   });
   /**/
 
@@ -54,8 +62,10 @@
   // When we hear the 'update' event, that means a list item's data
   // has just updated. We need to update the page to reflect that,
   // as well as remove the 'edit' class so the edit form disappears
-  listItems.on('update', function (index, name, priority) {
-    var updateListItemHtml = $.render(itemTemplate, item);
+  listItems.on('update', function (item, itemIndex) {
+    var $item = $('.list-item', $root).eq(itemIndex);
+    $('.li-name', $item).text(item.name);
+    $('.li-category', $item).text(item.category);
   });
   /**/
 

@@ -19,10 +19,12 @@
       this.trigger('destroy', index);
     };
 
-    this.update = function (index, name, priority) {
+    this.update = function (index, name, category) {
       // TODO EXTENSION
-      name.push(listItem);
-      this.trigger('update', items[index], index);
+      var item = items[index];
+      item.name = name;
+      item.category = category;
+      this.trigger('update', item, index);
     };
 
   };
