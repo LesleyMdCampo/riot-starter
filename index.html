@@ -1,84 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>List Maker!</title>
+  <title>PupOrNot!</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
   <script type="text/javascript"></script>
 </head>
 <body>
+  <h1>PupOrNot</h1>
 
-  <h1>Things to write down</h1>
+  <div id="stats"></div>
 
-  <!-- CREATE FORM -->
-  <form class="new-list-item">
-    <h3>Make a New Item <span class="error" style="display:none;"></span></h3>
-    Item Name: <input type="text" class="name" name="name" placeholder="Item Name (e.g. Get Groceries)" autocomplete="off" />
-    Task Category: <input type="text" class="category" name="category" placeholder="Category (1 is highest - 1, 2, 3)" autocomplete="off" />
+  <h2>Click Image to Vote!</h2>
+  <!-- Create Form -->
+  <form class="new-puppy">
+    Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" class="name" name="name" placeholder="Item Name (e.g. Cute Puppies)" autocomplete="off" value="cute dog 1" /></br>
+
+    Image URL: <input type="text" class="image" name="image" placeholder="" autocomplete="off" value="http://images4.fanpop.com/image/photos/14700000/So-cute-puppies-14749028-1600-1200.jpg"/>
+
     <input type="submit" class="submit" value="Create!" />
   </form>
 
-  <div id="main">
-    <h2>Manage List Items</h2>
+  <div id="puppy-showcase">
     <!-- the root div mapped to $root in riot js -->
-    <div class="list-items"></div>
   </div>
 
   <!-- Templates -->
   <div id="templates">
+    <script type="text/template" class="puppy">
+      <div class="puppy" data-id="{id}">
+        <img src="{image_url}" class="vote-image" />
+        <h4>{name}</h4>
+        <div class="vote-count"></div>
+      </div>
+    </script>
 
-    <script class="list-item" type="text/template">
-      <li class="list-item">
-         <div class="view">
-            <label class="li-name">{name}</label>
-            <label>( Category: <span class="li-category">{category}</span> )</label>
-            <input type="button" class="destroy" value="Destroy"/>
-            <input type="button" class="edit" value="Edit"/>
-         </div>
-         <div class="edit-item">
-           Edit Name: <input type="text" class="edit-name" value="{name}">
-           Edit Category: <input type="text" class="edit-category" value="{category}">
-           <input type="button" class="save-edit" value="Save Edits"/>
-         </div>
-      </li>
+    <script type="text/template" class="rank">
+      <div data-image="{id}">
+        <span>{name} | votes: {votes}</span>
+      </div>
     </script>
   </div>
+
+
 
   <!-- 3rd party scripts -->
   <script src="vendor/js/jquery-1.10.2.min.js"></script>
   <script src="vendor/js/riot.js"></script>
   <!-- Models -->
-  <script src="js/models/list-item.js"></script>
-  <!-- Views -->
-  <script src="js/presenters/list-item-form.js"></script>
-  <script src="js/presenters/list-item-list.js"></script>
+  <script src="js/models/puppy.js"></script>
+  <!-- Presenters -->
+  <script src="js/presenters/puppy-form.js"></script>
+  <script src="js/presenters/showcase.js"></script>
+  <script src="js/presenters/stats.js"></script>
 
-      <section id="main">
-        <ul id="todo-list"></ul>
-      </section>
-
-      <footer id="footer">
-        <span id="todo-count"></spangit >
-      </footer>
-
-    </section>
-
-
-    <div id="templates">
-      <script class="todo-item" type="text/template">
-        <li data-id="{id}" class="todo-item">
-          <div class="view">
-            <input class="toggle" type="checkbox">
-            <label>{name}</label>
-            <button class="destroy"/>
-          </div>
-        </li>
-      </script>
-    </div>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="vendor/riot.js"></script>
-    <script src="js/todo.js"></script>
-    <script src="js/app.js"></script>
   </body>
 </html>
 

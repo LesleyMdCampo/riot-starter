@@ -6,45 +6,62 @@ body {
   /*box-sizing: border-box;*/
 }
 
-h2 { text-align: center; }
-
-.error {
-  border: 1px solid #e23232;
-  font-weight: normal;
-  color: #590d0d;
-  background: #f3e2e2;
-  padding: 5px 10px;
+img {
+  width: 150px;
+  cursor: pointer;
 }
 
-#main .list-items-index-view {
+#puppy-showcase {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+.error {
+  border: 1px solid red;
+  font-weight: normal;
+  color: red;
+  background: rgb(221, 175, 175);
+  padding: 0 10px;
+}
+
+#puppy-index-view {
   border-left: 1px solid #000;
 }
 
-#main .half {
-  width: 50%;
+.puppy, #puppy-index-view {
+  /*width: 50%;*/
   float: left;
 }
 
-#main .list-items-index-view .destroy, #main .list-items-index-view .li-id {
+.puppy {
+  height: 200px;
+}
+
+#puppy-index-view .destroy {
   display: none;
 }
 
-form.new-list-item {
+form.new-puppy {
   border: 1px solid #000;
   padding: 10px;
   background: #B6C1DD;
+  clear: left;
+  height: 100px;
 }
-form.new-list-item input[type="text"] {
+form.new-puppy input[type="text"] {
   width: 400px;
 }
 
-/* Normal list item state */
-.list-item {
+.comment {
   background: #ccc;
   /*height: 50px;*/
   padding: 20px;
   margin: 5px 0;
 }
+<<<<<<< HEAD
 .list-item .edit-item { display: none; }
 .list-item .destroy {
   background: rgb(221, 175, 175);
@@ -60,6 +77,11 @@ form.new-list-item input[type="text"] {
   background: rgb(241, 241, 176);
 }
 .list-item.edit .edit-item { display: block; }
+=======
+.puppy:hover {
+  background: rgb(241, 241, 176);
+}
+>>>>>>> 975d600771df65a3f11dbdbf6db638a861f6811e
 
 
 .li-name {
@@ -84,7 +106,18 @@ input[type="button"], input[type="submit"] {
 .save-edit, .submit {
   background: rgb(129, 170, 129);
 }
+<<<<<<< HEAD
 
 .edit-item-section {
   margin: 5px 0 0 0;
 }
+=======
+.destroy {
+  background: rgb(221, 175, 175);
+  float: right;
+}
+
+.edit-item-section {
+  margin: 5px 0 0 0;
+}
+>>>>>>> 975d600771df65a3f11dbdbf6db638a861f6811e
