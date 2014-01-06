@@ -19,7 +19,7 @@
     // The "private" variable
     var comments = [];
     var index = 0;
-
+    
     $.observable(this);
 
     // CRUD type functions
@@ -39,6 +39,10 @@
       this.trigger("like", comment);
       console.log("The like property in comment model has this comment: ", comment);
     };
+
+    this.reveal = function () {
+      return comments;
+    }
 
   };
 

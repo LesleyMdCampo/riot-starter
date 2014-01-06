@@ -14,7 +14,7 @@
     <h2>Mysterious fuzzball accepts a gift</h2>
     <div class="photo">
       <img src="http://i.imgur.com/Sz3Jmr0.jpg" />
-      <div class="total-like-count"></div>
+      <div class="total-like-count">Total Likes:</div>
     </div>
 
     <h3>Comments</h3>
@@ -30,8 +30,6 @@
     </form>
   </div>
 
-
-  <!-- >>>>>> OVER-EXTENSION: DELETE THIS LINE <<<<<<
   <hr />
 
   <div class="pet" data-id="pet_2">
@@ -65,8 +63,6 @@
       <button>Submit</button>
     </form>
   </div>
-<!-- -->
-
 
   <!-- Templates -->
 
@@ -74,7 +70,7 @@
     <script type="text/template" class="comment">
       <div class="comment" data-id="{id}">
         <b class="author">{ author }</b>: { message } -
-        <span class="like-count"></span> <a href="#" class="like">Like</a>
+        <span class="like-count">Count: 0</span> <a href="#" class="like">Like</a>
       </div>
     </script>
   </div>
@@ -89,8 +85,10 @@
   <!-- Presenters -->
   <script src="js/presenters/comment-form.js"></script>
   <script src="js/presenters/comment-list.js"></script>
+  <script src="js/presenters/total-likes.js"></script>
   <!-- Initializers -->
   <script src="js/main.js"></script>
 
 </body>
 </html>
+
