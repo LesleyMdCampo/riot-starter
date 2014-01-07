@@ -47,6 +47,12 @@
       author: 'Bob',
       message: "Anytime I close the bathroom door..."
     });
+
+    var petscore = new PetScorePresenter({
+      root: $petRoot.find('.comments'),
+      totalLikes: 0
+    });
+
   };
 
 
